@@ -1,0 +1,12 @@
+#Local
+serveur: (subscriber)
+mosquitto_sub -d -t server
+Client: (publisher)
+mosquitto_pub -d -t server -m "message"
+
+#Distant
+serveur:
+mosquitto_sub -h ip_adr -t server
+client:
+mosquitto_pub -h ip_adr -t server -m "message"
+
